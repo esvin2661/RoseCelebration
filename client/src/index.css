@@ -1,0 +1,192 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(20, 14.3%, 4.1%);
+  --muted: hsl(60, 4.8%, 95.9%);
+  --muted-foreground: hsl(25, 5.3%, 44.7%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(20, 14.3%, 4.1%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(20, 14.3%, 4.1%);
+  --border: hsl(20, 5.9%, 90%);
+  --input: hsl(20, 5.9%, 90%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(60, 4.8%, 95.9%);
+  --secondary-foreground: hsl(24, 9.8%, 10%);
+  --accent: hsl(60, 4.8%, 95.9%);
+  --accent-foreground: hsl(24, 9.8%, 10%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(60, 9.1%, 97.8%);
+  --ring: hsl(20, 14.3%, 4.1%);
+  --radius: 0.5rem;
+  
+  /* Custom colors for the bouquet */
+  --rose-pink: hsl(338, 100%, 70%);
+  --rose-deep: hsl(340, 82%, 52%);
+  --rose-bright: hsl(348, 100%, 54%);
+  --leaf-green: hsl(122, 39%, 49%);
+  --leaf-light: hsl(122, 31%, 65%);
+  --gold: hsl(51, 100%, 50%);
+  --cream: hsl(60, 56%, 91%);
+}
+
+.dark {
+  --background: hsl(240, 10%, 3.9%);
+  --foreground: hsl(0, 0%, 98%);
+  --muted: hsl(240, 3.7%, 15.9%);
+  --muted-foreground: hsl(240, 5%, 64.9%);
+  --popover: hsl(240, 10%, 3.9%);
+  --popover-foreground: hsl(0, 0%, 98%);
+  --card: hsl(240, 10%, 3.9%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --border: hsl(240, 3.7%, 15.9%);
+  --input: hsl(240, 3.7%, 15.9%);
+  --primary: hsl(207, 90%, 54%);
+  --primary-foreground: hsl(211, 100%, 99%);
+  --secondary: hsl(240, 3.7%, 15.9%);
+  --secondary-foreground: hsl(0, 0%, 98%);
+  --accent: hsl(240, 3.7%, 15.9%);
+  --accent-foreground: hsl(0, 0%, 98%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(0, 0%, 98%);
+  --ring: hsl(240, 4.9%, 83.9%);
+  --radius: 0.5rem;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+    background: linear-gradient(135deg, hsl(338, 100%, 92%) 0%, hsl(338, 58%, 84%) 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: 'Poppins', sans-serif;
+  }
+}
+
+/* Rose Bloom Animation */
+@keyframes bloom {
+  0% { 
+    transform: scale(0.3) rotate(0deg);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(0.8) rotate(5deg);
+    opacity: 0.8;
+  }
+  100% { 
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+/* Gentle Sway Animation */
+@keyframes sway {
+  0%, 100% { transform: rotate(-2deg); }
+  50% { transform: rotate(2deg); }
+}
+
+/* Petal Float Animation */
+@keyframes float {
+  0%, 100% { 
+    transform: translateY(0px) rotate(0deg);
+    opacity: 1;
+  }
+  50% { 
+    transform: translateY(-20px) rotate(180deg);
+    opacity: 0.7;
+  }
+}
+
+/* Sparkle Animation */
+@keyframes sparkle {
+  0%, 100% { 
+    transform: scale(0) rotate(0deg);
+    opacity: 0;
+  }
+  50% { 
+    transform: scale(1) rotate(180deg);
+    opacity: 1;
+  }
+}
+
+/* Title Glow Animation */
+@keyframes glow {
+  0%, 100% { 
+    text-shadow: 0 0 20px hsl(338, 100%, 70%, 0.6);
+  }
+  50% { 
+    text-shadow: 0 0 30px hsl(338, 100%, 70%, 0.9), 0 0 40px hsl(338, 100%, 70%, 0.4);
+  }
+}
+
+/* Rose Styles */
+.rose {
+  animation: bloom 2s ease-out forwards, sway 4s ease-in-out infinite 2s;
+  transform-origin: bottom center;
+}
+
+.rose:nth-child(1) { animation-delay: 0s, 2s; }
+.rose:nth-child(2) { animation-delay: 0.3s, 2.5s; }
+.rose:nth-child(3) { animation-delay: 0.6s, 3s; }
+.rose:nth-child(4) { animation-delay: 0.9s, 3.5s; }
+.rose:nth-child(5) { animation-delay: 1.2s, 4s; }
+.rose:nth-child(6) { animation-delay: 1.5s, 4.5s; }
+.rose:nth-child(7) { animation-delay: 1.8s, 5s; }
+
+.rose:hover {
+  transform: scale(1.1) rotate(5deg) !important;
+  transition: all 0.3s ease;
+}
+
+.floating-petal {
+  animation: float 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.sparkle {
+  animation: sparkle 3s ease-in-out infinite;
+}
+
+.birthday-text {
+  animation: glow 2s ease-in-out infinite;
+  font-family: 'Dancing Script', cursive;
+}
+
+.dancing-font {
+  font-family: 'Dancing Script', cursive;
+}
+
+.poppins-font {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .rose {
+    transform: scale(0.8);
+  }
+  
+  .birthday-text {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .rose {
+    transform: scale(0.6);
+  }
+  
+  .birthday-text {
+    font-size: 2rem;
+  }
+}
