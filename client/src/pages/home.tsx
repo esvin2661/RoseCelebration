@@ -146,17 +146,18 @@ export default function Home() {
         </div>
 
         {/* Animated Rose Bouquet */}
-        <div className="relative flex flex-wrap justify-center items-end gap-4 mb-8">
+        <div className="relative flex justify-center items-end gap-2 md:gap-4 mb-8 flex-wrap">
           {roses.map((rose, index) => (
             <div
               key={rose.id}
-              className="rose cursor-pointer"
+              className="rose cursor-pointer flex-shrink-0"
               title={rose.title}
               onMouseEnter={handleRoseHover}
+              style={{ alignSelf: 'flex-end' }}
             >
-              <div className="relative">
+              <div className="relative flex flex-col items-center">
                 {/* Stem */}
-                <div className={`w-2 ${rose.height} bg-green-500 mx-auto rounded-full`}></div>
+                <div className={`w-2 ${rose.height} bg-green-500 rounded-full`}></div>
                 
                 {/* Leaves */}
                 <div className={`absolute ${rose.height === 'h-40' ? 'top-20' : rose.height === 'h-36' ? 'top-18' : 'top-16'} -left-2 w-6 h-4 bg-green-400 rounded-full transform -rotate-45`}></div>
