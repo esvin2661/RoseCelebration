@@ -133,7 +133,7 @@ export default function Home() {
       {/* Main Content */}
       <div className="min-h-screen flex flex-col items-center justify-center p-4 relative">
         {/* Birthday Message */}
-        <div className="text-center mb-8 z-10">
+        <div className="text-center mb-16 z-10">
           <h1 className="birthday-text text-6xl md:text-7xl font-bold text-pink-600 mb-4">
             Happy Birthday
           </h1>
