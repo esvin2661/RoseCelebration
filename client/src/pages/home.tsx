@@ -178,15 +178,6 @@ export default function Home() {
           ))}
         </div>
 
-        {/* Guatemalan Flag */}
-        <div className="mb-4 flex justify-center">
-          <div className="w-8 h-6 border border-gray-300 shadow-sm rounded-sm overflow-hidden">
-            <div className="w-full h-2 bg-blue-500"></div>
-            <div className="w-full h-2 bg-white"></div>
-            <div className="w-full h-2 bg-blue-500"></div>
-          </div>
-        </div>
-
         {/* Decorative Elements */}
         <div className="text-center">
           <div className="flex justify-center items-center space-x-4 mb-4">
