@@ -134,10 +134,10 @@ export default function Home() {
       <div className="min-h-screen flex flex-col items-center justify-center p-4 relative">
         {/* Birthday Message */}
         <div className="text-center mb-16 z-10">
-          <h1 className="birthday-text text-6xl md:text-7xl font-bold text-pink-600 mb-4">
+          <h1 className="birthday-text text-6xl md:text-7xl font-bold text-pink-600 mb-8">
             Happy Birthday
           </h1>
-          <h2 className="dancing-font text-4xl md:text-5xl font-semibold text-red-500 mb-2">
+          <h2 className="dancing-font text-4xl md:text-5xl font-semibold text-red-500 mb-6">
             Emely Flores
           </h2>
           <p className="poppins-font text-lg text-gray-700 opacity-80">
