@@ -146,7 +146,7 @@ export default function Home() {
         </div>
 
         {/* Animated Rose Bouquet */}
-        <div className="relative flex justify-center items-end gap-2 md:gap-4 mb-8 flex-wrap">
+        <div className="relative flex justify-center items-end gap-2 md:gap-4 my-12 flex-wrap">
           {roses.map((rose, index) => (
             <div
               key={rose.id}
