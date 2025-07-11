@@ -193,7 +193,7 @@ export default function Home() {
         {/* Interactive Message */}
         <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-center">
           <p className="poppins-font text-xs text-gray-500 opacity-60">
-            Hover over the roses to see them dance! 💃
+            Hover over the roses to see them sparkle! ✨
           </p>
         </div>
       </div>
