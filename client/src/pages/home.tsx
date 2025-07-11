@@ -37,7 +37,7 @@ const roses: Rose[] = [
   {
     id: 4,
     color: "white",
-    height: "h-34",
+    height: "h-32",
     bgColor: "bg-white",
     innerColors: ["bg-gray-50", "bg-white", "bg-yellow-50"],
     title: "White Rose"
@@ -45,7 +45,7 @@ const roses: Rose[] = [
   {
     id: 5,
     color: "pink-light",
-    height: "h-30",
+    height: "h-28",
     bgColor: "bg-pink-300",
     innerColors: ["bg-pink-200", "bg-pink-100", "bg-pink-50"],
     title: "Light Pink Rose"
@@ -56,7 +56,7 @@ const roses: Rose[] = [
     height: "h-28",
     bgColor: "bg-red-500",
     innerColors: ["bg-red-400", "bg-red-300", "bg-red-200"],
-    title: "Red Rose"
+    title: "Red Rose 2"
   },
   {
     id: 7,
@@ -64,7 +64,7 @@ const roses: Rose[] = [
     height: "h-32",
     bgColor: "bg-pink-500",
     innerColors: ["bg-pink-400", "bg-pink-300", "bg-pink-200"],
-    title: "Pink Rose"
+    title: "Pink Rose 2"
   }
 ];
 
@@ -73,7 +73,7 @@ export default function Home() {
 
   const handleRoseHover = (event: React.MouseEvent<HTMLDivElement>) => {
     const rect = event.currentTarget.getBoundingClientRect();
-    const sparkleId = Date.now();
+    const sparkleId = Date.now() + Math.random(); // Make unique IDs
     const newSparkle = {
       id: sparkleId,
       x: rect.left + rect.width / 2,
@@ -138,7 +138,7 @@ export default function Home() {
             Happy Birthday
           </h1>
           <h2 className="dancing-font text-4xl md:text-5xl font-semibold text-red-500 mb-2">
-            Emely
+            Emely Flores
           </h2>
           <p className="poppins-font text-lg text-gray-700 opacity-80">
             Wishing you a day filled with love and joy! 🎉
@@ -160,11 +160,11 @@ export default function Home() {
                 <div className={`w-2 ${rose.height} bg-green-500 rounded-full`}></div>
                 
                 {/* Leaves */}
-                <div className={`absolute ${rose.height === 'h-40' ? 'top-20' : rose.height === 'h-36' ? 'top-18' : 'top-16'} -left-2 w-6 h-4 bg-green-400 rounded-full transform -rotate-45`}></div>
-                <div className={`absolute ${rose.height === 'h-40' ? 'top-24' : rose.height === 'h-36' ? 'top-22' : 'top-20'} -right-2 w-6 h-4 bg-green-400 rounded-full transform rotate-45`}></div>
+                <div className={`absolute ${rose.height === 'h-40' ? 'top-20' : rose.height === 'h-36' ? 'top-16' : rose.height === 'h-32' ? 'top-14' : 'top-12'} -left-2 w-6 h-4 bg-green-400 rounded-full transform -rotate-45`}></div>
+                <div className={`absolute ${rose.height === 'h-40' ? 'top-24' : rose.height === 'h-36' ? 'top-20' : rose.height === 'h-32' ? 'top-18' : 'top-16'} -right-2 w-6 h-4 bg-green-400 rounded-full transform rotate-45`}></div>
                 
                 {/* Rose Head */}
-                <div className={`absolute ${rose.height === 'h-40' ? '-top-8' : '-top-6'} left-1/2 transform -translate-x-1/2`}>
+                <div className={`absolute ${rose.height === 'h-40' ? '-top-8' : rose.height === 'h-36' ? '-top-6' : '-top-6'} left-1/2 transform -translate-x-1/2`}>
                   <div className={`${rose.height === 'h-40' ? 'w-16 h-16' : 'w-12 h-12'} ${rose.bgColor} rounded-full relative ${rose.color === 'white' ? 'border-2 border-gray-100' : ''}`}>
                     <div className={`absolute inset-1 ${rose.innerColors[0]} rounded-full`}>
                       <div className={`absolute inset-1 ${rose.innerColors[1]} rounded-full`}>
@@ -176,6 +176,15 @@ export default function Home() {
               </div>
             </div>
           ))}
+        </div>
+
+        {/* Guatemalan Flag */}
+        <div className="mb-4 flex justify-center">
+          <div className="w-8 h-6 border border-gray-300 shadow-sm rounded-sm overflow-hidden">
+            <div className="w-full h-2 bg-blue-500"></div>
+            <div className="w-full h-2 bg-white"></div>
+            <div className="w-full h-2 bg-blue-500"></div>
+          </div>
         </div>
 
         {/* Decorative Elements */}
